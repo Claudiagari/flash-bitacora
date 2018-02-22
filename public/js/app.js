@@ -6,11 +6,11 @@ $(document).ready(function() {
     let message = $('#message').val();
     if (title.length !== 0 && message.length !== 0) {
       let output = ` <div class="row">
-    <div class="col s12 offset-l3 l6">
+    <div class="col s12 offset-l3 l6 border">
       <div class="card grey lighten-5">
         <div class="card-content black-text">
           <span class="card-title">${title}</span>
-          <p>${message}</p>
+          <p class="box">${message}</p>
         </div>
       </div>
     </div>
@@ -22,7 +22,7 @@ $(document).ready(function() {
     $('#message').val('');
   });
   function handleFileSelect(evt) {
-    var files = evt.target.files; 
+    var files = evt.target.files;
     for (var i = 0, f; f = files[i]; i++) {
       if (!f.type.match('image.*')) {
         continue;
@@ -50,7 +50,7 @@ $(document).ready(function() {
         <div class="card grey lighten-5">
           <div class="card-content black-text">
             <span class="card-title">${titleImage}</span>
-            <img class="thumb responsive-img" src="${image}">
+            <img class="thumb responsive-box box " src="${image}">
           </div>
         </div>
       </div>
@@ -137,11 +137,11 @@ $(document).ready(function() {
             let multimedia = e.target.result;
             let titleMultimedia = $('#titleMultimedia').val();
             let output = `<div class="row">
-            <div class="col s12 offset-l3 l6">
+            <div class="col s12 offset-l3 l6 border">
               <div class="card grey lighten-5">
                 <div class="card-content black-text">
                 <p><span class="card-title">${titleMultimedia}</span></p>
-                <video width="320" height="240" controls>
+                <video class="box" width="100%" height="auto" controls>
                 <source src="${multimedia}" type="video/mp4">
                 </video>
                </div>
